@@ -1,0 +1,44 @@
+name: EnderShare
+main: com.weebly.trukopstudios.endershare.EnderShareMain
+version: R1.0
+
+author: KillerOfPie
+depend: [PlayerDataPlus]
+
+commands:
+    endershare:
+      description: Sends a request to share ender chests
+      usage: /endershare <playername>
+      aliases: [eshare]
+    enderaccept:
+      description: Accepts a received request to share ender chests
+      usage: /enderaccept
+      aliases: [eaccept]
+    enderdeny:
+      description: Denies a received request to share ender chests
+      usage: /enderdeny
+      aliases: [edeny]
+    endercancel:
+      description: Cancels an active request
+      usage: /endercancel
+      aliases: [ecancel]
+    enderend:
+      description: Stops sharing enderchests
+      usage: /enderend
+      aliases: [eend]
+    enderswitch:
+      description: Swicthes which enderchest is active
+      usage: /enderswitch
+      aliases: [eswitch]
+    enderinfo:
+      description: Shows player EnderShare information
+      usage: /enderinfo
+      aliases: [einfo]
+    enderhelp:
+      description: Shows the help for EnderShare
+      usage: /enderhelp
+      aliases: [ehelp]
+    offlineenderchest:
+      description: Opens a players offline enderchest
+      usage: /offlineenderchest <playername>
+      aliases: [oec]
