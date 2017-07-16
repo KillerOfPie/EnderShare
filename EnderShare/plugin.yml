@@ -41,5 +41,3 @@ commands:
       description: Opens a players offline enderchest
       usage: /offlineenderchest <playername>
       aliases: [oec]
-    
-      
