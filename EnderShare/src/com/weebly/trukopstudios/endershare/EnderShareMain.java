@@ -341,7 +341,7 @@ public class EnderShareMain extends JavaPlugin
 		//for canceling sent requests
         else if(cmd.getName().equalsIgnoreCase("endercancel"))
         {
-            //STOP just STOP it i dont want this shit take it back okay?!?!?!?
+            //STOP just STOP it i dont want this stuff take it back okay?!?!?!?
             if(args.length != 0)
             {
                 sender.sendMessage(colorize("&4You gave me too much information!"));
@@ -377,14 +377,14 @@ public class EnderShareMain extends JavaPlugin
             
             return true;  
         }
-		//command to allow players to swicth the enderchest they are going to open
+		//command to allow players to switch the enderchest they are going to open
         else if(cmd.getName().equalsIgnoreCase("enderswitch"))
         {
             //I
             //Don't
             //Want
             //This
-            //Shit
+            //Stuff
             if(args.length != 0)
             {
                 sender.sendMessage(colorize("&4You gave me too much information!"));

@@ -124,7 +124,7 @@ public class EShareListener implements Listener
                 plugin.saveInv(e.getInventory().getContents(), "Enderchest", e.getInventory().getName().replace("'s Ender Chest", ""));
     }
     
-    //trigger on inventory close, am i just saying the obvious shit at this point?
+    //trigger on inventory close, am i just saying the obvious stuff at this point?
     @EventHandler
     public void onECClose(InventoryCloseEvent e)
     {
