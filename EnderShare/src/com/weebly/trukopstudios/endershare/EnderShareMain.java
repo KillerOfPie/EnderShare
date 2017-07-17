@@ -437,7 +437,8 @@ public class EnderShareMain extends JavaPlugin
 	//for loading inventories from file, funny story tho got it online and it stopped loading whenever there was a gap and caused some enderchest losses in a live test..Whoops
     public ItemStack[] loadInv(String inventoryName, String playerName)
     {
-         Yaml p = PDPmain.getOfflinePlayerYaml(playerName);
+        try{
+        Yaml p = PDPmain.getOfflinePlayerYaml(playerName);
         List<ItemStack> itemstackList = new ArrayList<ItemStack>();
         
         int i = 0, total = 0;
@@ -465,5 +466,9 @@ public class EnderShareMain extends JavaPlugin
         ItemStack[] toReturn = itemstackList.toArray(new ItemStack[itemstackList.size()]);
         
         return toReturn;
+        }catch(NullPointerException e){
+            return null;
+        }
+        
     }
 }

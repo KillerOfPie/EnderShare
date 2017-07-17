@@ -1,6 +1,6 @@
 name: EnderShare
 main: com.weebly.trukopstudios.endershare.EnderShareMain
-version: R1.0
+version: R1.1
 author: KillerOfPie
 depend: [PlayerDataPlus]
 prefix: EnderShare
