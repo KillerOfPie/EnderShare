@@ -46,7 +46,8 @@ public class EnderShareMain extends JavaPlugin
 		getLogger().info("EnderShare Disabled!--------------");
 	}
 	
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+	@SuppressWarnings("deprecation")
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
  	{
         if(!(sender instanceof Player))
         {
@@ -62,12 +63,20 @@ public class EnderShareMain extends JavaPlugin
                 String ptemp = args[0];
                 if(PDPmain.playerExist(ptemp))
                 {
-                    Player tempp = (Player) sender;
-                    
-                    Inventory chest = Bukkit.createInventory(tempp, InventoryType.ENDER_CHEST, ptemp + "'s Ender Chest");
-                    chest.setContents(loadInv("Enderchest", ptemp));
-                    tempp.openInventory(chest);
-                    return true;
+                        Player tempp = (Player) sender;
+
+                        if(loadInv("Enderchest", ptemp) == null)
+                        {
+                        Inventory chest = Bukkit.createInventory(tempp, InventoryType.ENDER_CHEST, ptemp + "'s Ender Chest");
+                        chest.setContents(loadInv("Enderchest", ptemp));
+                        tempp.openInventory(chest);
+                        return true;
+                    }
+                    else
+                    {
+                        sender.sendMessage(colorize("&4That player has nothing in their enderchest!"));
+                        return true; 
+                    }
                 } else {
                     sender.sendMessage(colorize("&4I cannot find that player!"));
                     return true;
@@ -96,6 +105,10 @@ public class EnderShareMain extends JavaPlugin
                 sender.sendMessage(colorize("&4That's not a user!"));
                 return false;
             }
+        }
+        else if(pf1.get(shareRequest) != null)
+        {
+            p2 = pf1.getString(shareRequest);
         }
         
         if(p2 != null)
@@ -150,7 +163,7 @@ public class EnderShareMain extends JavaPlugin
                 return true;
             }
 	        
-	        pf1.set(shareRequest, p2);
+	        pf1.set(shareRequest, plugin.getServer().getOfflinePlayer(p2).getName());
 	        pf1.save();
             
 	        pf2.set(shareReceived, p1);
